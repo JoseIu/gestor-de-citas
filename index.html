@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/reset.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
+    <script defer src="dist/js/app.js"></script>
+    <title>Citas</title>
+</head>
+<body>
+    <main>
+        <section class="warpper">
+            <h1 class="title ">Veterinaria Firulais</h1>
+            <div class="container">
+                <div class="right">
+                    <h2 class="right__title">Datos del paciente</h2>
+                    <form class="right__form" id="formulario">
+                        <label class="right__label" for="nombre">Nombre del Paciente:</label>  
+                        <input class="right__input" type="text" id="nombre">
+                        
+                        <label class="right__label" for="telefono">Telefono:</label>  
+                        <input class="right__input" type="text" id="telefono">   
+    
+                        <label class="right__label" for="fecha">Fecha:</label>  
+                        <input class="right__input" type="date" id="fecha"> 
+    
+                        <label class="right__label" for="hora">Hora:</label>  
+                        <input class="right__input" type="time" id="hora">  
+                        
+                        <label class="right__label" for="sintomas">Sintomas:</label> 
+                        <textarea class="right__input" name="" id="sintomas" cols="30" rows="10"></textarea> 
+                        
+                        <input class="right__submit" type="submit" value="Creat Cita">
+                    </form>
+                </div>
+    
+                <div class="left">
+                    <h2 class="left__title">Citas</h2>
+                    <div class="left__citas" id="citas">
+                        <!-- <article class="cliente">
+                            <div class="cliente__subcontainer">
+                                <h2 class="cliente__nombre">Carlos</h2>
+                                <button class="cliente__delete">X</button>
+                            </div>
+                            <p class="cliente__telefono">Telefono: <span class="cliente__span">654123456</span> </p>
+                            <p class="cliente__fecha">Fecha: <span class="cliente__span">21/02/2022</span> </p>
+                            <p class="cliente__hora">Hora: <span class="cliente__span">15:00</span> </p>
+                            <p class="cliente__sintomas">Sintomas: <span class="cliente__span">Dolor de dientes</span> </p>
+                        </article> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

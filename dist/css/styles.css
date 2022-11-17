@@ -1,0 +1,163 @@
+body {
+  background-color: rgb(238, 238, 238);
+  color: #333;
+}
+
+.warpper {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.container {
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 3em;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    flex-wrap: nowrap;
+  }
+}
+
+.right {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .right {
+    width: 40%;
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .right {
+    width: 40%;
+  }
+}
+.right__title {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+.right__form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: initial;
+  align-items: initial;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+.right__label {
+  font-weight: bold;
+  margin-bottom: 0.4em;
+  border: none;
+}
+@media screen and (min-width: 900px) {
+  .right__label {
+    padding: 0.5em;
+  }
+}
+.right__input {
+  padding: 0.3em;
+  border-radius: 0.5em;
+  background: #EEEEEE;
+  box-shadow: 0.5em 0.5em 1em #cacaca, -0.5em -0.5em 1em #ffffff;
+  border: none;
+}
+@media screen and (min-width: 900px) {
+  .right__input {
+    padding: 0.5em;
+  }
+}
+.right__submit {
+  width: 8em;
+  padding: 0.5em;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  border-radius: 1em;
+  background: #EEEEEE;
+  box-shadow: 1em 1em 2em #cacaca, -1em -1em 2em #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .left {
+    width: 60%;
+    font-size: 1.1em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .left {
+    width: 60%;
+  }
+}
+.left__title {
+  font-weight: bold;
+  margin-bottom: 2em;
+  font-size: 1.3em;
+}
+.left__citas {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.cliente {
+  padding: 1em;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 0.5em;
+  background: #EEEEEE;
+  box-shadow: 1em 1em 2em #cacaca, -1em -1em 2em #ffffff;
+}
+@media screen and (min-width: 900px) {
+  .cliente {
+    max-width: 10em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cliente {
+    max-width: 15em;
+  }
+}
+.cliente__subcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+.cliente__span {
+  font-weight: 100;
+}
+.cliente__nombre {
+  margin: 0;
+}
+.cliente__telefono {
+  font-size: 0.8em;
+}
+.cliente__fecha {
+  font-size: 0.8em;
+}
+.cliente__hora {
+  font-size: 0.8em;
+}
+.cliente__sintomas {
+  font-size: 0.8em;
+}
+.cliente__delete {
+  font-size: 0.8em;
+  width: 2em;
+  border: none;
+  color: black;
+  font-size: 1em;
+  cursor: pointer;
+}

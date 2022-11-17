@@ -1,0 +1,157 @@
+@import 'mixing.scss';
+body{
+    background-color: rgb(238, 238, 238);
+    color: #333;
+    // overflow: hidden;
+}
+.warpper{
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+.container{
+    // background-color: blue;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3em;
+    @include rp(768px){
+    flex-wrap: nowrap;
+    }
+}
+.right{
+    // background-color: lightblue;
+    width: 100%;
+    @include rp(768px){
+        width: 40%;
+        font-size: 1em;
+    }
+    @include rp(900px){
+        width: 40%;
+    }
+    &__title{
+        // background-color: lightcoral;
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-bottom: 2em;
+    }
+    &__form{
+        // background-color: lightgoldenrodyellow;
+        @include flex(flex, nowrap, initial, initial);
+        flex-direction: column;
+        row-gap: .5em;
+    }
+    &__label{
+        // background-color: lightgrey;
+        font-weight: bold;
+        margin-bottom: .4em;
+        border: none;
+        @include rp(900px){
+            padding: .5em;
+        }
+        
+    }
+    &__input{
+        // background-color: lightgreen;
+        padding: .3em;
+        @include neo(.5em, .5em);
+        border: none;
+        @include rp(900px){
+            padding: .5em;
+        }
+        
+    }
+    &__submit{
+        width: 8em;
+        padding: .5em;
+        border: none;
+        cursor: pointer;
+
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1em;
+        @include neo(1em, 1em)
+    }
+}
+
+.left{
+    // background-color: lightcoral;
+    @include rp(768px){
+        width: 60%;
+        font-size: 1.1em;
+    }
+    @include rp(900px){
+        width: 60%;
+    }
+    
+    &__title{
+        // background-color: lightblue;
+        font-weight: bold;
+        margin-bottom: 2em;
+        font-size: 1.3em;
+    }
+    &__citas{
+        // background-color: red;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+    }
+}
+.cliente{
+    // background-color: lightgreen;
+    padding: 1em;
+    width: 100%;
+    font-weight: bold;
+    @include neo(.5em, 1em);
+    @include rp(900px){
+        max-width: 10em;
+    }
+    @include rp(1200px){
+        max-width: 15em;
+    }
+    &__subcontainer{
+        display: flex;
+        justify-content: space-between;
+        // background-color: aliceblue;
+    }
+    &__span{
+        font-weight: 100;
+    }
+    &__nombre{
+        // background-color: lightgoldenrodyellow;
+        margin: 0;;
+    }
+    &__telefono{
+        // background-color: lightgreen;
+        font-size: .8em;
+    }
+    &__fecha{
+        // background-color: lightgreen;
+        font-size: .8em;
+    }
+    &__hora{
+        // background-color: lightgreen;
+        font-size: .8em;
+    }
+    &__sintomas{
+        // background-color: lightgreen;
+        font-size: .8em;
+    }
+    &__delete{
+        // background-color: lightgreen;
+        font-size: .8em;
+        width: 2em;
+        border: none;
+        color: black;
+        font-size: 1em;
+        cursor: pointer;
+    }
+}

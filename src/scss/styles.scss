@@ -14,6 +14,7 @@ body{
     font-size: 2em;
     font-weight: bold;
     margin: 0;
+    padding: 1em;
 }
 .container{
     // background-color: blue;
@@ -41,6 +42,9 @@ body{
         font-weight: bold;
         margin-bottom: 2em;
     }
+    &__content{
+        // background-color: antiquewhite;
+    }
     &__form{
         // background-color: lightgoldenrodyellow;
         @include flex(flex, nowrap, initial, initial);
@@ -58,14 +62,26 @@ body{
         
     }
     &__input{
-        // background-color: lightgreen;
+        background-color: lightgreen;
+        width: 100%;
         padding: .3em;
+        margin-bottom: 1em;
         @include neo(.5em, .5em);
         border: none;
         @include rp(900px){
             padding: .5em;
         }
         
+    }
+    &__error{
+        display: inline-block;
+        width: 100%;
+        padding: .5em;
+        text-transform: uppercase;
+        font-size: .8em;
+        background-color: rgba(243, 19, 19, 0.678);
+        border-radius: .5em;
+        color: #fff;
     }
     &__submit{
         width: 8em;

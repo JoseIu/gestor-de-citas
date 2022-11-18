@@ -17,20 +17,32 @@
                 <div class="right">
                     <h2 class="right__title">Datos del paciente</h2>
                     <form class="right__form" id="formulario">
-                        <label class="right__label" for="nombre">Nombre del Paciente:</label>  
-                        <input class="right__input" type="text" id="nombre">
-                        
-                        <label class="right__label" for="telefono">Telefono:</label>  
-                        <input class="right__input" type="text" id="telefono">   
-    
-                        <label class="right__label" for="fecha">Fecha:</label>  
-                        <input class="right__input" type="date" id="fecha"> 
-    
-                        <label class="right__label" for="hora">Hora:</label>  
-                        <input class="right__input" type="time" id="hora">  
-                        
-                        <label class="right__label" for="sintomas">Sintomas:</label> 
-                        <textarea class="right__input" name="" id="sintomas" cols="30" rows="10"></textarea> 
+                        <div class="right__content">
+                            <label class="right__label" for="nombre">Nombre del Paciente:</label>  
+                            <input class="right__input" type="text" id="nombre">
+                            <!-- <span class="right__error">el campo es necesarío</span> -->
+                        </div>
+
+                        <div class="right__content"> 
+                            <label class="right__label" for="telefono">Telefono:</label>  
+                            <input class="right__input" type="text" id="telefono">
+                        </div>
+
+                        <div class="right__content">  
+                            <label class="right__label" for="fecha">Fecha:</label>  
+                            <input class="right__input" type="date" id="fecha"> 
+                        </div>
+
+                        <div class="right__content">
+                            <label class="right__label" for="hora">Hora:</label>  
+                            <input class="right__input" type="time" id="hora">  
+                        </div>
+
+                        <div class="right__content">
+                            <label class="right__label" for="sintomas">Sintomas:</label> 
+                            <textarea class="right__input" name="" id="sintomas" cols="30" rows="10"></textarea>   
+                        </div>
+
                         
                         <input class="right__submit" type="submit" value="Creat Cita">
                     </form>

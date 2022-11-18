@@ -95,13 +95,17 @@ body {
   width: 8em;
   padding: 0.5em;
   border: none;
-  cursor: pointer;
+  opacity: 0.5;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1em;
   border-radius: 1em;
   background: #EEEEEE;
   box-shadow: 1em 1em 2em #cacaca, -1em -1em 2em #ffffff;
+}
+.right__submit--active {
+  opacity: 1;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

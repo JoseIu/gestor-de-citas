@@ -1,47 +1,99 @@
-const formulario = document.getElementById('formulario');
-const citas      = document.getElementById('citas');
-
+//Variables
+const formulario     = document.getElementById('formulario');
+const citas          = document.getElementById('citas');
 const inputName      = document.getElementById('nombre');
 const inputPhone     = document.getElementById('telefono');
 const inputDate      = document.getElementById('fecha');
 const inputHour      = document.getElementById('hora');
 const inputSintomas  = document.getElementById('sintomas');
 
+const btnSubmit      =document.querySelector('.right__submit');
+
 let clientes = [];
+
+//objeto del form para comprobr si existe algún campo vacio
+const form = {
+    nombre: '',
+    telefono: '',
+    fecha:'',
+    hora: '',
+    sintomas:'',
+}
 
 
 const eventListeners = () =>{
-    formulario.addEventListener('submit', agregarCliente);
-
-    
-    inputName.addEventListener('blur', validar);
-    inputPhone.addEventListener('blur', validar);
-    inputDate.addEventListener('blur', validar);
-    inputHour.addEventListener('blur', validar);
+    inputName   .addEventListener('blur', validar);
+    inputPhone  .addEventListener('blur', validar);
+    inputDate   .addEventListener('blur', validar);
+    inputHour   .addEventListener('blur', validar);
     inputSintomas.addEventListener('blur', validar);
+
+
+
+    formulario.addEventListener('submit', agregarCliente);
     document.addEventListener('DOMContentLoaded',()=>{
+        
         clientes = JSON.parse(localStorage.getItem('clientes') || []);
+        
         insertarCliente();
     })
+
+    
+
 }
 eventListeners();
 
 //funciones
 function validar (e){
     if(e.target.value.trim() === ''){
-        console.log('esta vacio');
-    }else{
-        console.log('tiene algo');
+        mostrarError(`El campo ${e.target.id} es obligatorio...`, e.target.parentElement);
+        return;
+    }
+
+    limpiarAlerta(e.target.parentElement);
+
+    //Asignar valores al objeto form
+    form[e.target.name] = e.target.value.trim().toLowerCase();
+
+    //Comprobar si esta lleno el objero from
+    comprobarFrom();
+}
+
+const mostrarError = (mensaje, referencia)=>{
+    //comprobar si ya existe alerta/error
+    limpiarAlerta(referencia);
+
+    //insertamos alerta/error
+    const error = document.createElement('span');
+    error.classList.add('right__error');
+    error.textContent = mensaje;
+    referencia.appendChild(error);
+}
+
+const limpiarAlerta = (referencia)=>{
+    const alerta = referencia.querySelector('.right__error');
+    if(alerta){
+        alerta.remove();
     }
 }
+const comprobarFrom = ()=>{
+    if(Object.values(form).includes('')){
+
+    }else{
+        btnSubmit.classList.add('right__submit--active');
+        btnSubmit.disables = false;
+    }
+}
+
+//AGREGAMOS CLIENTES
 function agregarCliente  (e){
     e.preventDefault();
 
-    const name      = inputName.value;
-    const phone     = inputPhone.value;
-    const date      = inputDate.value;
-    const hour      = inputHour.value;
-    const sintomas  = inputSintomas.value;
+    const name      = document.getElementById('nombre').value;
+    const phone     = document.getElementById('telefono').value;
+    const date      = document.getElementById('fecha').value;
+    const hour      = document.getElementById('hora').value;
+    const sintomas  = document.getElementById('sintomas').value;
 
     const clientObjt = {
         id : Date.now(),
@@ -57,9 +109,10 @@ function agregarCliente  (e){
 
     insertarCliente();
 
-    formulario.reset();
+    // formulario.reset();
 
 }
+
 const insertarCliente = ()=>{
     limiarDom();
     if(clientes.length > 0){
